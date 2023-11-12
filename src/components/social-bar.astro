@@ -1,0 +1,69 @@
+---
+import { portfolioData } from '../data';
+const { social, intro, about } = portfolioData;
+
+---
+
+<section class="social-bar__wrapper">
+  <div class="social-bar__header">
+    <h1>Daniel Warren</h1>
+    <ul>
+      {social &&
+        social.map(({ icon, link }) => (
+          <li>
+            <a href={link}>
+              <img src={icon.src} alt={link} />
+            </a>
+          </li>
+        ))}
+    </ul>
+  </div>
+  <p class="social-bar__about">{intro}</p>
+  <p class="social-bar__about">{about}</p>
+</section>
+
+<style>
+  .social-bar__wrapper {
+    /* margin-top: var(--huge); */
+  }
+
+  .social-bar__wrapper img {
+    width: 16px;
+    height: auto;
+  }
+
+  .social-bar__wrapper ul {
+    display: flex;
+    margin-bottom: var(--large);
+    opacity: 0.45;
+  }
+
+  .social-bar__wrapper ul li {
+    margin-right: var(--medium);
+  }
+
+  .social-bar__about {
+    width: min(75ch, 100%);
+    line-height: 1.75;
+    margin-bottom: var(--medium);
+    font-size: var(--font-normal);
+    font-weight: 500;
+  }
+
+  .social-bar__wrapper h1 {
+    font-size: 36px;
+    margin-bottom: var(--medium);
+    color: hsl(10, 61%, 49%);
+    font-family: 'Lilita One', sans-serif;
+    letter-spacing: .5px;
+  }
+
+  .social-bar__header {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    margin-bottom: var(--small);
+  }
+
+</style>
+

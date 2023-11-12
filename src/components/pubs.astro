@@ -1,0 +1,57 @@
+---
+import { portfolioData } from '../data';
+import Heading from './heading.astro';
+const data = portfolioData.publications;
+---
+
+<section class="pubs__wrapper">
+  <Heading title="Publications" />
+
+  <ul>
+    {data.map((p) => (
+      <li>
+        <div>
+          <a href={p.link}>
+            <span class="pubs__name">{p.name} </span>
+          </a>
+          <span class="pubs__publication">
+            {' '}
+            {p.publication}
+          </span>
+          ,<span class="pubs__date"> {p.date}</span>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+
+<style>
+  .pubs__wrapper {
+    margin-bottom: var(--large);
+  }
+
+  .pubs__wrapper h2 {
+    margin-bottom: var(--huge);
+    font-weight: 700;
+    display: inline-block;
+    background: var(--primary100);
+    padding: var(--medium);
+    background: hsl(217, 38%, 28%);
+  }
+
+  .pubs__wrapper ul li {
+    margin-bottom: var(--medium);
+    line-height: 1.5;
+  }
+
+  .pubs__name {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .pubs__publication {
+  }
+
+  .pubs__date {
+  }
+</style>

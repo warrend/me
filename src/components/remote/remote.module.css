@@ -1,0 +1,77 @@
+.draggable-box {
+  position: absolute;
+  cursor: grab;
+  z-index: 100;
+  box-shadow: var(--shadow300);
+  background-color: hsla(0, 0%, 4%, 0.949);
+  width: clamp(50vw, 700px, 90vw);
+  transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+  color: var(--grey400);
+  border-radius: var(--tiny);
+}
+
+.draggable-box__minimized {
+  width: 150px !important;
+  transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+}
+
+.draggable-box__bottom-icon {
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: auto;
+  animation: fadeInOut 2s infinite;
+}
+
+.draggable-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--medium) var(--large);
+}
+
+.draggable-box__header h3 {
+  color: var(--primary300);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: var(--small);
+}
+
+.draggable-box__icon {
+  pointer-events: none;
+  transform: rotate(45deg);
+  width: 16px;
+  height: auto;
+}
+
+.draggable-box__content {
+  height: 85vh;
+  overflow-y: auto;
+}
+
+.draggable-box__content-closed {
+  height: 0;
+  overflow-y: auto;
+  transition: height 0.1s ease-in;
+}
+
+.draggable-box__content-open {
+  height: 80vh;
+  transition: height 0.1s ease-in;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}

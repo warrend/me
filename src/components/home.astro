@@ -1,0 +1,28 @@
+---
+import SocialBar from './social-bar.astro';
+import Portfolio from './portfolio.astro';
+import Pubs from './pubs.astro';
+import Pods from './podcasts.astro';
+---
+
+<main>
+  <section class="section-wrapper">
+    <SocialBar />
+  </section>
+  <section class="section-wrapper">
+    <Portfolio />
+  </section>
+  <section class="section-wrapper">
+    <Pubs />
+  </section>
+  <section class="section-wrapper">
+    <Pods />
+  </section>
+</main>
+
+<style>
+  .section-wrapper {
+    margin-bottom: var(--jumbo);
+    padding: 0 var(--large);
+  }
+</style>

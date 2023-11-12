@@ -1,0 +1,72 @@
+---
+import { portfolioData } from '../data';
+import { Image } from 'astro:assets';
+import Heading from './heading.astro';
+
+const data = portfolioData.podcasts;
+---
+
+<section class="podcasts__wrapper">
+  <Heading title="Podcasts" />
+  <ul>
+    {data.map((item) => (
+      <li>
+        <Image src={item.image} alt={item.name} />
+        <div>
+          <h2 class="podcasts__name">{item.name}</h2>
+          <p class="podcasts__description">{item.description}</p>
+          <section>
+            <ul class="podcasts__link-wrapper">
+              {item.links.map(({ name, link }) => (
+                <li class="podcasts__link">
+                  <a href={link}>{name}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .podcasts__wrapper {
+    margin-bottom: var(--medium);
+  }
+
+  .podcasts__wrapper img {
+    height: 100px;
+    width: auto;
+    border-radius: 2px;
+  }
+
+  .podcasts__wrapper > ul > li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: var(--large);
+  }
+
+  .podcasts__name {
+    font-weight: 700;
+    margin-bottom: var(--medium);
+  }
+
+  .podcasts__description {
+    line-height: 1.5;
+    width: min(75ch, 100%);
+    margin-bottom: var(--small);
+  }
+
+  .podcasts__link-wrapper {
+    display: inline-flex;
+    /* background: var(--grey200);
+    padding: var(--medium) var(--small); */
+  }
+
+  .podcasts__link {
+    cursor: pointer;
+    margin-right: var(--normal);
+    color: var(--accent500);
+  }
+</style>

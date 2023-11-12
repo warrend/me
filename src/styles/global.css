@@ -1,0 +1,57 @@
+@import './reset.css';
+@import '../theme/index.css';
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;500;600;700;900&family=Oswald:wght@700;500;400&display=swap');
+
+:root {
+  /* font-family: 'Inter', sans-serif; */
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--main-font-color);
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    /* font-family: 'Inter var', sans-serif; */
+    font-family: 'Noto Sans', sans-serif;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--background);
+  font-size: 14px;
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: var(--primary600);
+  font-weight: 600;
+}
+
+.home {
+  margin: var(--large);
+  margin-top: 0;
+}
+
+main {
+  width: min(700px, 100%);
+  display: grid;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: var(--normal);
+}

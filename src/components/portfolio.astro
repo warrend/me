@@ -1,0 +1,116 @@
+---
+import { portfolioData } from '../data';
+import { githubIcon, linkIcon } from '../data/images';
+import { Image } from 'astro:assets';
+import Heading from './heading.astro';
+
+const data = portfolioData.projects;
+---
+
+<section class="portfolio__wrapper">
+  <Heading title="Projects" />
+  <ul>
+    {data.map((item) => (
+      <li>
+        <div
+          class="portfolio__item"
+          style={{ gridTemplateColumns: item.logo ? '50px 1fr' : '1fr' }}
+        >
+          <div class="portfolio__item--left">
+            {item.logo && <Image src={item.logo} alt={item.name} />}
+          </div>
+          <div class="portfolio__item--right">
+            <div class="portfolio__item--right-header">
+              <h2>{item.name} </h2>
+              <a
+                href={item.github}
+                class="portfolio__item--right-header-icon"
+              >
+                <Image src={githubIcon} alt="github icon" />
+              </a>
+              {item.demo && (
+                <a href={item.demo}>
+                  <Image src={linkIcon} alt="link icon" />
+                </a>
+              )}
+            </div>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+
+<style>
+  .portfolio__wrapper h1 {
+    margin-bottom: var(--huge);
+    font-weight: 700;
+    display: inline-block;
+    background: var(--primary100);
+    background: hsl(217, 38%, 28%);
+    padding: var(--medium);
+  }
+
+  .portfolio__wrapper ul li {
+    margin-bottom: var(--large);
+  }
+
+  .portfolio__wrapper ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .portfolio__wrapper img {
+    height: 50px;
+    width: auto;
+    border-radius: 2px;
+  }
+
+  .portfolio__item--empty-logo {
+    height: 50px;
+    width: 50px;
+    background: var(--grey200);
+  }
+
+  .portfolio__item {
+    display: grid;
+    column-gap: var(--large);
+    grid-template-columns: 50px 1fr;
+  }
+
+  .portfolio__item--left {
+    justify-self: center;
+  }
+
+  .portfolio__item--right-header {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .portfolio__item--right-header > a {
+    margin-right: var(--normal);
+  }
+
+  .portfolio__item--right img {
+    width: 18px;
+    height: auto;
+    opacity: .45;
+  }
+
+  .portfolio__item--right h2 {
+    font-weight: 700;
+    margin-bottom: var(--medium);
+    margin-right: var(--normal);
+    color: var(--primary300);
+  }
+
+  .portfolio__item--right p {
+    line-height: 1.5;
+    width: min(75ch, 100%);
+  }
+
+  .portfolio__item--links > * {
+    margin-right: var(--normal);
+  }
+</style>

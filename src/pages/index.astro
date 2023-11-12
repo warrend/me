@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Remote } from '../components/remote'
+import { artData, portfolioData } from '../data';
+import { Image } from 'astro:assets';
+import Home from '../components/home.astro';
+---
+
+<Layout title="Daniel Warren">
+	<section>
+		<Remote client:load>
+      <Home />
+    </Remote>
+		<ul class="art__wrapper--paintings">
+			{artData.map((item) => (
+				<li>
+					<div class="art__blurb">{item.title}</div>
+					<Image alt={item.title} src={item.image} />
+				</li>
+			))}
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	.art__wrapper--paintings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .art__wrapper--paintings img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .art__wrapper--paintings li {
+    margin: 0;
+    position: relative;
+  }
+
+  .art__wrapper--paintings li:hover .art__blurb {
+    opacity: 1;
+  }
+
+  .art__blurb {
+    position: absolute;
+    font-weight: 400;
+    bottom: 0;
+    left: 0;
+    color: var(--primary300);
+    background: var(--background);
+    padding: var(--normal);
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    border-radius: 0 2px 0 0;
+  }
+
+  .lazy-load-image-background {
+    display: inline;
+  }
+
+  .lazy-load-image-loaded {
+    height: 100%;
+    width: 100%;
+  }
+
+</style>
