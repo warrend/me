@@ -45,7 +45,7 @@
 
 .draggable-box__icon {
   pointer-events: none;
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
   width: 16px;
   height: auto;
 }

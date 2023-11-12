@@ -1,8 +1,6 @@
 import styles from './remote.module.css';
-import { Image } from 'astro:assets';
 import React, { useEffect, useRef, useState } from 'react';
-import { downIcon, dragIcon } from '../../data/images';
-import type { ImageTransform } from 'astro';
+import dragIcon from '../../data/images/move.png';
 
 export function Remote({ children }: { children: React.ReactNode }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -87,7 +85,9 @@ export function Remote({ children }: { children: React.ReactNode }) {
       <div className={styles['draggable-box__header']}>
         <img
           className={styles['draggable-box__icon']}
-          src="/src/data/images/drag-icon.svg"
+          src={dragIcon.src}
+          width={dragIcon.width}
+          height={dragIcon.height}
           alt="test"
         />
         <h3 onClick={handleOnClickToggle}>{isOpen ? 'Minimize' : 'Expand'}</h3>
