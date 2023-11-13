@@ -78,7 +78,7 @@ export const artData = [
 export const portfolioData = {
   name: 'Daniel Warren',
   intro:
-    'Reading a coding resume is boring so I added my artwork to liven up the place. Minimize this window to see better. It’s also draggable around your browser. Then when you’re done, you can come back here and look at my credentials.',
+    'Reading a coding resume is boring so I added my artwork to liven up the place. Minimize this window to see better. Then when you’re done, you can come back here and look at my credentials.',
   about:
     'As a software engineer, I use an array of technical and creative skills to efficiently solve problems. Before coding, I designed hand painted wallpaper, worked in sales, and did copywriting for television.',
   social: [
