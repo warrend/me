@@ -18,7 +18,7 @@
 .draggable-box__bottom-icon {
   position: absolute;
   left: 50%;
-  bottom: 2px;
+  bottom: 12px;
   transform: translateX(-50%);
   width: 24px;
   height: auto;
@@ -69,7 +69,7 @@
 @keyframes fadeInOut {
   0%,
   100% {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   50% {
     opacity: 1;

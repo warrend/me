@@ -1,6 +1,7 @@
 import styles from './remote.module.css';
 import React, { useEffect, useRef, useState } from 'react';
 import dragIcon from '../../data/images/move.png';
+import arrowDown from '../../data/images/arrow-down.png';
 
 export function Remote({ children }: { children: React.ReactNode }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -103,13 +104,15 @@ export function Remote({ children }: { children: React.ReactNode }) {
       >
         {children}
       </div>
-      {/* {isAtTop && isOpen && (
-        <Image
-          class={styles['draggable-box__bottom-icon']}
-          src={downIcon}
+      {isAtTop && isOpen && (
+        <img
+          className={styles['draggable-box__bottom-icon']}
+          src={arrowDown.src}
+          height={arrowDown.height}
+          width={arrowDown.width}
           alt="Scroll down"
         />
-      )} */}
+      )}
     </div>
   );
 }
