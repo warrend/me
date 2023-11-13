@@ -77,9 +77,7 @@ export function Remote({ children }: { children: React.ReactNode }) {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
-      document.addEventListener('touchmove', handleMouseMove, {
-        passive: false,
-      });
+      document.addEventListener('touchmove', handleMouseMove);
       document.addEventListener('touchend', handleMouseUp);
     };
   }, [isDragging, offset]);
