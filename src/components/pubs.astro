@@ -12,13 +12,13 @@ const data = portfolioData.publications;
       <li>
         <div>
           <a href={p.link}>
-            <span class="pubs__name">{p.name} </span>
+            <span class="pubs__name">{p.name}</span>
           </a>
           <span class="pubs__publication">
             {' '}
-            {p.publication}
+            {p.publication},
           </span>
-          ,<span class="pubs__date"> {p.date}</span>
+          <span class="pubs__date">{p.date}</span>
         </div>
       </li>
     ))}
