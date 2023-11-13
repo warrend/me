@@ -36,25 +36,21 @@ export function Remote({ children }: { children: React.ReactNode }) {
 
   const handleMouseDown = (e: any) => {
     document.body.style.userSelect = 'none';
-    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-    const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
     setIsDragging(true);
     setOffset({
-      x: clientX - position.x,
-      y: clientY - position.y,
+      x: e.clientX - position.x,
+      y: e.clientY - position.y,
     });
   };
 
   const handleMouseMove = (e: any) => {
     document.body.style.userSelect = 'none';
-    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-    const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
 
     if (!isDragging) return;
 
     setPosition({
-      x: clientX - offset.x,
-      y: clientY - offset.y,
+      x: e.clientX - offset.x,
+      y: e.clientY - offset.y,
     });
   };
 
@@ -71,14 +67,10 @@ export function Remote({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('touchmove', handleMouseMove, { passive: false });
-    document.addEventListener('touchend', handleMouseUp);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
-      document.addEventListener('touchmove', handleMouseMove);
-      document.addEventListener('touchend', handleMouseUp);
     };
   }, [isDragging, offset]);
 
