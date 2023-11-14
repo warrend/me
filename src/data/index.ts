@@ -95,7 +95,7 @@ export const portfolioData = {
       logo: ludIcon,
       description:
         'A tech fasting app to free yourself from the daily digital grind.',
-      github: 'https://github.com/warrend/varbq',
+      github: 'https://github.com/warrend/dfast',
       demo: null,
     },
     {
