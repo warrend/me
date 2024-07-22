@@ -39,9 +39,15 @@ import {
   unionAndBond,
   unionStBridge,
   whitney,
+  cityBus,
+  waverlyMacDougal,
+  nanoBrew,
 } from './art-images';
 
 export const artData = [
+  // { title: 'Waverly & MacDougal', image: waverlyMacDougal },
+  // { title: 'City Bus', image: cityBus },
+  { title: 'Nano Brew', image: nanoBrew },
   { title: 'Lafayette & Prince', image: lafayetteAndPrince },
   { title: '7th Ave Subway', image: seventhAveSubwayCar },
   { title: '4th & 9th St.', image: fourthNinth2 },
@@ -95,7 +101,7 @@ export const portfolioData = {
       logo: ludIcon,
       description:
         'A tech fasting app to free yourself from the daily digital grind.',
-      github: 'https://github.com/warrend/dfast',
+      github: 'https://github.com/warrend/lud',
       demo: null,
     },
     {
