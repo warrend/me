@@ -2,7 +2,6 @@ import {
   githubIcon,
   linkedinIcon,
   codepenIcon,
-  cwPodcastLogo,
   ludIcon,
   varbqLogo,
 } from './images';
@@ -150,27 +149,6 @@ export const portfolioData = {
       publication: 'A List Apart',
       link: 'https://alistapart.com/article/my-grandfathers-travel-logs-and-other-repetitive-tasks/',
       date: 'December 14, 2017',
-    },
-  ],
-  podcasts: [
-    {
-      name: 'Console.Warren() Podcast',
-      author: 'Daniel Warren',
-      publication: 'Substack, Apple Podcasts, Spotify',
-      links: [
-        { name: 'Substack', link: 'https://consolewarren.substack.com/' },
-        {
-          name: 'Spotify',
-          link: 'https://open.spotify.com/show/2YqFHL7BPU9rE2ZgPnIoWi?si=a1cd63ec1dea472a',
-        },
-        {
-          name: 'Apple',
-          link: 'https://podcasts.apple.com/us/podcast/console-warren-podcast/id1706675213?i=1000628655847',
-        },
-      ],
-      image: cwPodcastLogo,
-      description:
-        'A podcast highlighting what is new and noteworthy in software development.',
     },
   ],
 } as const;
